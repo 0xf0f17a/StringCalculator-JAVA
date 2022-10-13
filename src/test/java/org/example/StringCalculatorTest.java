@@ -34,4 +34,9 @@ public class StringCalculatorTest {
         final StringCalculator calculator = new StringCalculator();
         assertEquals(15, calculator.calculate("1,2\n3,4\n5"));
     }
+    @Test
+    public void emptyLinesShouldBeIgnored() {
+        final StringCalculator calculator = new StringCalculator();
+        assertEquals(3, calculator.calculate("1,2\n"));
+    }
 }
