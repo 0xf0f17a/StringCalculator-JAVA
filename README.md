@@ -11,7 +11,7 @@ String Calculator TDD Kata implemented in Java
   - "1" will return 1
   - "1,2" will return 3
 - [x] Allow the Add method to handle an unknown amount of numbers
-- [] Allow the Add method to handle new lines between numbers (instead of commas).
+- [x] Allow the Add method to handle new lines between numbers (instead of commas).
   - “1\n2,3” will return 6
   - “1,\n” will throw exception 
 - [] Support different delimiters
