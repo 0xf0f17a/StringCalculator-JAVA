@@ -24,4 +24,9 @@ public class StringCalculatorTest {
         assertEquals(3, calculator.calculate("1,2"));
         assertEquals(5, calculator.calculate("3,2"));
     }
+    @Test
+    public void multipleNumberSeparatedByCommaWillReturnThoseAdditionNumber() {
+        final StringCalculator calculator = new StringCalculator();
+        assertEquals(15, calculator.calculate("1,2,3,4,5"));
+    }
 }
