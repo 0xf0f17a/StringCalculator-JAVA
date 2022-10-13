@@ -5,7 +5,7 @@ String Calculator TDD Kata implemented in Java
 
 ## TODO List
 
-- [x] Create a simple String calculator with a method signature: `java int Add(string numbers)`. 
+- [x] Create a simple String calculator with a method signature: `int Add(string numbers)`. 
   - The method can take up to two numbers, separated by commas, and will return their sum.
   - "" will return 0
   - "1" will return 1
