@@ -29,4 +29,9 @@ public class StringCalculatorTest {
         final StringCalculator calculator = new StringCalculator();
         assertEquals(15, calculator.calculate("1,2,3,4,5"));
     }
+    @Test
+    public void multipleNumberSeparatedByNewLineWillReturnThoseAdditionNumber() {
+        final StringCalculator calculator = new StringCalculator();
+        assertEquals(15, calculator.calculate("1,2\n3,4\n5"));
+    }
 }
