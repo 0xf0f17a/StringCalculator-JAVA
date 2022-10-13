@@ -11,4 +11,11 @@ public class StringCalculatorTest {
         final StringCalculator calculator = new StringCalculator();
         assertEquals(0, calculator.calculate(""));
     }
+    @Test
+    public void singleNumberWillReturnThatNumber() {
+        final StringCalculator calculator = new StringCalculator();
+        assertEquals(1, calculator.calculate("1"));
+        assertEquals(2, calculator.calculate("2"));
+        assertEquals(3, calculator.calculate("3"));
+    }
 }
