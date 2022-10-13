@@ -18,4 +18,10 @@ public class StringCalculatorTest {
         assertEquals(2, calculator.calculate("2"));
         assertEquals(3, calculator.calculate("3"));
     }
+    @Test
+    public void twoNumberSeparatedByCommaWillReturnThatAdditionNumber() {
+        final StringCalculator calculator = new StringCalculator();
+        assertEquals(3, calculator.calculate("1,2"));
+        assertEquals(5, calculator.calculate("3,2"));
+    }
 }
