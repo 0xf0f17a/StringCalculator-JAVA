@@ -24,4 +24,4 @@ String Calculator TDD Kata implemented in Java
   - “//[***]\n1***2***3” will return 6 
 - [] Allow multiple delimiters like this: “//[delim1][delim2]\n”
   - “//[*][%]\n1*2%3” will return 6.
-- [] Allow multiple delimiters with length longer than one char
+- [x] Allow multiple delimiters with length longer than one char

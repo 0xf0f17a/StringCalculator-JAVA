@@ -23,6 +23,7 @@ public class StringCalculator {
         }
         regex.append(']');
         for (String token : numbers.split(regex.toString())) {
+            if (token.isBlank()) continue;
             int value = Integer.parseInt(token);
             if (value < 0) {
                 hadError = true;

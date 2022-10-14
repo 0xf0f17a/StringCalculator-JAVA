@@ -79,4 +79,10 @@ public class StringCalculatorTest {
         assertEquals(13, calculator.calculate("//;\n1;1002\n3;4\n5"));
         assertEquals(1200, calculator.calculate("200,400,600"));
     }
+
+    @Test
+    public void numbersSeparatedByMultipleCommasReturnsCorrectResult() {
+        final StringCalculator calculator = new StringCalculator();
+        assertEquals(15, calculator.calculate("1,,2\n3,,4\n\n5"));
+    }
 }
