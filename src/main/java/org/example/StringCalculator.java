@@ -37,7 +37,9 @@ public class StringCalculator {
                 hadError = true;
                 negatives.add(value);
             }
-            sum += value;
+            if (value <= 1000) {
+                sum += value;
+            }
         }
         if (hadError) {
             String message = String.format("negatives not allowed: %s", negatives);
