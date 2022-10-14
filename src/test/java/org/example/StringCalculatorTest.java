@@ -85,4 +85,10 @@ public class StringCalculatorTest {
         final StringCalculator calculator = new StringCalculator();
         assertEquals(15, calculator.calculate("1,,2\n3,,4\n\n5"));
     }
+
+    @Test
+    public void numbersSeparatedByMultipleDelimiterReturnsCorrectResult() {
+        final StringCalculator calculator = new StringCalculator();
+        assertEquals(6, calculator.calculate("//[***]\n1***2***3"));
+    }
 }

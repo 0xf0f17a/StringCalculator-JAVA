@@ -6,18 +6,23 @@ import java.util.List;
 public class StringCalculator {
     public int calculate(String numbers) {
         if (numbers.isEmpty()) return 0;
-        final List<Character> delimiters = new ArrayList<>();
+        final List<String> delimiters = new ArrayList<>();
         List<Integer> negatives = new ArrayList<>();
         int sum = 0;
         StringBuilder regex = new StringBuilder("[\\n");
-        delimiters.add(',');
+        delimiters.add(",");
         if (numbers.startsWith("//")) {
             int i = numbers.indexOf('\n');
-            char d = numbers.charAt(i - 1);
+            String d;
+            if (numbers.charAt(2) == '[') {
+                d = numbers.substring(3, i - 1);
+            } else {
+                d = numbers.substring(i - 1, i);
+            }
             delimiters.add(d);
             numbers = numbers.substring(i + 1);
         }
-        for (Character ch : delimiters) {
+        for (String ch : delimiters) {
             regex.append(ch);
         }
         regex.append(']');
