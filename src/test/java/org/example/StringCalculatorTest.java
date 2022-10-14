@@ -2,7 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringCalculatorTest {
 
@@ -45,5 +45,31 @@ public class StringCalculatorTest {
         final StringCalculator calculator = new StringCalculator();
         assertEquals(15, calculator.calculate("//;\n1;2\n3;4\n5"));
         assertEquals(15, calculator.calculate("//^\n1^2\n3^4\n5"));
+    }
+
+    @Test
+    public void negativeNumberThrowsException() {
+        final StringCalculator calculator = new StringCalculator();
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.calculate("-1")
+        );
+        assertTrue(exception.getMessage().contains("-1"));
+        assertTrue(exception.getMessage().contains("negatives not allowed"));
+    }
+
+    @Test
+    public void multipleNegativeNumberThrowsExceptionContainingNegativeNumbers() {
+        final StringCalculator calculator = new StringCalculator();
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.calculate("//^\n-1^2\n-3^-4\n-5")
+        );
+        String message = exception.getMessage();
+        assertTrue(message.contains("-1"));
+        assertTrue(message.contains("-3"));
+        assertTrue(message.contains("-4"));
+        assertTrue(message.contains("-5"));
+        assertTrue(message.contains("negatives not allowed"));
     }
 }

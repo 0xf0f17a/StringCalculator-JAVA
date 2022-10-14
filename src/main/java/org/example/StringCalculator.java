@@ -29,8 +29,19 @@ public class StringCalculator {
 
     private int calculateSum(String numbers, String delimiters) {
         int sum = 0;
+        boolean hadError = false;
+        List<Integer> negatives = new ArrayList<>();
         for (String token : numbers.split(delimiters)) {
-            sum += Integer.parseInt(token);
+            int value = Integer.parseInt(token);
+            if (value < 0) {
+                hadError = true;
+                negatives.add(value);
+            }
+            sum += value;
+        }
+        if (hadError) {
+            String message = String.format("negatives not allowed: %s", negatives);
+            throw new IllegalArgumentException(message);
         }
         return sum;
     }
