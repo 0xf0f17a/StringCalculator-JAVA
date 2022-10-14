@@ -9,7 +9,6 @@ public class StringCalculator {
         final List<Character> delimiters = new ArrayList<>();
         List<Integer> negatives = new ArrayList<>();
         int sum = 0;
-        boolean hadError = false;
         StringBuilder regex = new StringBuilder("[\\n");
         delimiters.add(',');
         if (numbers.startsWith("//")) {
@@ -26,14 +25,13 @@ public class StringCalculator {
             if (token.isBlank()) continue;
             int value = Integer.parseInt(token);
             if (value < 0) {
-                hadError = true;
                 negatives.add(value);
             }
             if (value <= 1000) {
                 sum += value;
             }
         }
-        if (hadError) {
+        if (!negatives.isEmpty()) {
             String message = String.format("negatives not allowed: %s", negatives);
             throw new IllegalArgumentException(message);
         }
