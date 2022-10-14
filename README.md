@@ -14,7 +14,7 @@ String Calculator TDD Kata implemented in Java
 - [x] Allow the Add method to handle new lines between numbers (instead of commas).
   - “1\n2,3” will return 6
   - “1,\n” will throw exception 
-- [] Support different delimiters
+- [x] Support different delimiters
   - beginning of string will contain optional separate line that looks like this: “//[delimiter]\n[numbers…]”
   - “//;\n1;2” will return 3
 - [] Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed.

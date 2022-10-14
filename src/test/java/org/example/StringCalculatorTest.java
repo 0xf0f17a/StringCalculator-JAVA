@@ -39,4 +39,11 @@ public class StringCalculatorTest {
         final StringCalculator calculator = new StringCalculator();
         assertEquals(3, calculator.calculate("1,2\n"));
     }
+
+    @Test
+    public void multipleNumberSeparatedByCustomDelimiterWillReturnThoseAdditionNumber() {
+        final StringCalculator calculator = new StringCalculator();
+        assertEquals(15, calculator.calculate("//;\n1;2\n3;4\n5"));
+        assertEquals(15, calculator.calculate("//^\n1^2\n3^4\n5"));
+    }
 }
